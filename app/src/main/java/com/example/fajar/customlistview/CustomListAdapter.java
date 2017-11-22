@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 public class CustomListAdapter extends ArrayAdapter<String> {
 
-    private final MainActivity context;
+    private final ListActivity context;
     private final String[] itemname;
     private final String[] descriptionItem;
     private final Integer[] imgid;
 
-    public CustomListAdapter(MainActivity context, String[] itemname, Integer[] imgid, String[] descriptionItem) {
+    public CustomListAdapter(ListActivity context, String[] itemname, Integer[] imgid, String[] descriptionItem) {
         super(context, R.layout.instrumentlist, itemname);
         // TODO Auto-generated constructor stub
 
@@ -32,10 +32,10 @@ public class CustomListAdapter extends ArrayAdapter<String> {
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
         TextView extratxt = (TextView) rowView.findViewById(R.id.textView1);
 
-        //dari instansiasi diatas, dimasukkan data yang diambil dari array yang ada di MainActivity
+        //dari instansiasi diatas, dimasukkan data yang diambil dari array yang ada di ListActivity
         txtTitle.setText(itemname[position]);
         imageView.setImageResource(imgid[position]);
-        extratxt.setText("Description "+descriptionItem[position]);
+        extratxt.setText(""+descriptionItem[position]);
         return rowView;
 
     };
